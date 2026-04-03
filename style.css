@@ -74,10 +74,9 @@ a { text-decoration: none; color: inherit; cursor: pointer; }
   list-style: none;
 }
 .nav-links a {
-  font-size: 10px;
   letter-spacing: .24em;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 500;
   color: rgba(255,255,255,.8);
   transition: color .3s;
 }
@@ -102,8 +101,6 @@ a { text-decoration: none; color: inherit; cursor: pointer; }
   background-size: cover;
   background-position: center;
   transform: scale(1.06);
-  transition: transform 10s ease;
-  will-change: transform;
 }
 .hero-overlay {
   position: absolute;
@@ -304,7 +301,6 @@ a { text-decoration: none; color: inherit; cursor: pointer; }
   align-items: center;
   gap: 10px;
   margin-top: 12px;
-  font-size: 10px;
   letter-spacing: .3em;
   text-transform: uppercase;
   font-weight: 500;
@@ -426,9 +422,9 @@ a { text-decoration: none; color: inherit; cursor: pointer; }
   font-weight: 400;
   line-height: 1.05;
 }
-.products-header h2 span { display: block; font-style: italic; color: var(--bark); }
+.products-header h2 span { 
+    display: block; font-style: italic; color: var(--bark); }
 .see-all {
-  font-size: 10px;
   letter-spacing: .3em;
   text-transform: uppercase;
   font-weight: 400;
@@ -629,7 +625,6 @@ footer {
   max-width: 220px;
 }
 .footer-col h4 {
-  font-size: 9px;
   letter-spacing: .36em;
   text-transform: uppercase;
   color: var(--clay);
@@ -639,8 +634,7 @@ footer {
 .footer-col ul { list-style: none; }
 .footer-col li { margin-bottom: 9px; }
 .footer-col a {
-  font-size: 12px;
-  color: rgba(245,240,232,.38);
+  color: var(--cream);
   font-weight: 200;
   transition: color .3s;
 }
