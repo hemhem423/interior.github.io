@@ -643,7 +643,7 @@ a {
 
 .column-section {
     padding: 116px 60px;
-    background: var(--cream);
+    background: var(--charcoal);
 }
 
 .column-inner {
@@ -718,10 +718,6 @@ a {
     background-position: center;
     transition: transform .7s cubic-bezier(.25, .46, .45, .94);
     flex-shrink: 0;
-}
-
-.col-card--featured .col-thumb {
-    height: 400px;
 }
 
 .col-card:not(.col-card--featured) .col-thumb {
