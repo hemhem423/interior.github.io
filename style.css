@@ -835,7 +835,19 @@ footer {
     max-width: 220px;
 }
 
+.footer-col h4 {
+    color: var(--cream);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .36em;
+}
+
+.footer-col .sub-nav a {
+    transition: color .3s;
+}
+
 .footer-col ul {
+    color: var(--cream);
     list-style: none;
 }
 
@@ -843,7 +855,7 @@ footer {
     margin-bottom: 9px;
 }
 
-.footer-col a {
+.footer-col li a {
     color: var(--cream);
     font-size: 1.2rem;
     text-transform: uppercase;
