@@ -273,18 +273,6 @@ a {
 }
 
 
-/* ─── SECTION LABEL ─── */
-
-.label {
-    font-size: 9px;
-    letter-spacing: .44em;
-    text-transform: uppercase;
-    color: var(--clay);
-    font-weight: 400;
-    margin-bottom: 14px;
-}
-
-
 /* ─── ABOUT ─── */
 
 .about-section {
@@ -579,15 +567,10 @@ a {
 }
 
 .p-card .p-img {
-    height: 340px;
+    height: 400px;
     background-size: cover;
     background-position: center;
     transition: transform .7s cubic-bezier(.25, .46, .45, .94);
-}
-
-.p-card:nth-child(1) .p-img,
-.p-card:nth-child(4) .p-img {
-    height: 400px;
 }
 
 .p-card:hover .p-img {
@@ -861,7 +844,6 @@ a {
     padding: 15px 54px;
     background: var(--charcoal);
     color: var(--cream);
-    font-size: 10px;
     letter-spacing: .3em;
     text-transform: uppercase;
     font-weight: 400;
@@ -908,14 +890,6 @@ footer {
     max-width: 220px;
 }
 
-.footer-col h4 {
-    letter-spacing: .36em;
-    text-transform: uppercase;
-    color: var(--clay);
-    font-weight: 400;
-    margin-bottom: 18px;
-}
-
 .footer-col ul {
     list-style: none;
 }
@@ -926,7 +900,9 @@ footer {
 
 .footer-col a {
     color: var(--cream);
-    font-weight: 200;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .36em;
     transition: color .3s;
 }
 
@@ -942,8 +918,7 @@ footer {
 }
 
 .footer-bottom p {
-    font-size: 10px;
-    color: rgba(245, 240, 232, .18);
+    color: var(--cream);
     font-weight: 200;
     letter-spacing: .1em;
 }
