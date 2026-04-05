@@ -450,7 +450,6 @@ a {
 }
 
 h2 span {
-    display: block;
     color: var(--bark);
 }
 
@@ -713,36 +712,6 @@ h2 span {
 
 /* ─── CTA ─── */
 
-.showroom-section {
-    padding: 134px 60px;
-    text-align: center;
-    background: var(--cream);
-    position: relative;
-    overflow: hidden;
-}
-
-.showroom-section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 5vw, 66px);
-    font-weight: 400;
-    line-height: 1.1;
-    margin-bottom: 22px;
-    color: var(--charcoal);
-    position: relative;
-}
-
-.showroom-section h2 em {
-    color: var(--bark);
-}
-
-.showroom-section p {
-    color: var(--mid);
-    font-weight: 300;
-    margin: 0 auto 46px;
-    line-height: 1.8;
-    position: relative;
-}
-
 
 /* ─── showroom- ─── */
 
@@ -766,6 +735,14 @@ h2 span {
     font-weight: 400;
     line-height: 1.15;
     margin-bottom: 24px;
+}
+
+.showroom-section p {
+    color: var(--mid);
+    font-weight: 300;
+    margin: 0 auto 46px;
+    line-height: 1.8;
+    position: relative;
 }
 
 .showroom--text p {
