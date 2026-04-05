@@ -183,35 +183,8 @@ a {
     animation: fadeUp 1s .55s forwards;
 }
 
-.hero-sub {
-    margin-top: 26px;
-    font-size: 11px;
-    letter-spacing: .26em;
-    font-weight: 200;
-    color: rgba(255, 255, 255, .6);
-    text-transform: uppercase;
-    opacity: 0;
-    animation: fadeUp 1s .8s forwards;
-}
-
-.hero-cta {
-    display: inline-block;
-    margin-top: 50px;
-    padding: 14px 46px;
-    border: 1px solid rgba(255, 255, 255, .6);
-    color: #fff;
-    font-size: 10px;
-    letter-spacing: .3em;
-    text-transform: uppercase;
-    font-weight: 400;
-    opacity: 0;
-    animation: fadeUp 1s 1s forwards;
-    transition: background .3s, border-color .3s;
-}
-
-.hero-cta:hover {
-    background: rgba(255, 255, 255, .12);
-    border-color: #fff;
+.hero-title span {
+    color: var(--charcoal);
 }
 
 .hero-scroll {
@@ -224,7 +197,6 @@ a {
     align-items: center;
     gap: 8px;
     color: rgba(255, 255, 255, .45);
-    font-size: 9px;
     letter-spacing: .3em;
     text-transform: uppercase;
     opacity: 0;
@@ -844,6 +816,9 @@ footer {
 
 .footer-col .sub-nav a {
     transition: color .3s;
+    display: block;
+    color: var(--cream);
+    margin: 10px;
 }
 
 .footer-col ul {
