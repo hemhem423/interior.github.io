@@ -715,12 +715,12 @@ h2 span {
 
 /* ─── showroom- ─── */
 
-.showroom--section {
+.showroom-section {
     padding: 116px 60px;
     background: var(--cream);
 }
 
-.showroom--inner {
+.showroom-inner {
     max-width: 1240px;
     margin: 0 auto;
     display: grid;
@@ -729,7 +729,7 @@ h2 span {
     align-items: center;
 }
 
-.showroom--text h2 {
+.showroom-text h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(30px, 3vw, 48px);
     font-weight: 400;
@@ -753,12 +753,12 @@ h2 span {
     margin-bottom: 14px;
 }
 
-.showroom--images {
+.showroom-images {
     position: relative;
     height: 460px;
 }
 
-.showroom--img-main {
+.showroom-img-main {
     position: absolute;
     top: 0;
     right: 0;
@@ -770,7 +770,7 @@ h2 span {
     background-position: center;
 }
 
-.showroom--img-sub {
+.showroom-img-sub {
     position: absolute;
     bottom: 0;
     left: 0;
