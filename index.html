@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <!-- ── NAV ── -->
     <nav id="nav">
         <a href="#" class="nav-logo">MAISON</a>
@@ -19,7 +20,19 @@
             <li><a href="#showroom">Showroom</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <button class="nav-hamburger" id="navHamburger" aria-label="メニューを開く">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+    <div class="nav-drawer" id="navDrawer">
+        <ul class="drawer-links">
+            <li><a href="#about" class="drawer-link">About</a></li>
+            <li><a href="#collection" class="drawer-link">Collection</a></li>
+            <li><a href="#showroom" class="drawer-link">Showroom</a></li>
+            <li><a href="#contact" class="drawer-link">Contact</a></li>
+        </ul>
+    </div>
+    <div class="nav-drawer-overlay" id="drawerOverlay"></div>
 
     <!-- ── HERO ── -->
     <section class="hero">
@@ -34,6 +47,10 @@
         </div>
     </section>
 
+    <!-- ── MARQUEE ── -->
+    <div class="marquee-strip">
+        <div class="marquee-inner" id="marqueeInner"></div>
+    </div>
 
     <!-- ── ABOUT ── -->
     <section class="about-section" id="about">
@@ -43,15 +60,9 @@
                 <div class="img-box"></div>
             </div>
             <div class="about-text reveal d1">
-                <h2>About <span>Us</span></em>
-                </h2>
-                <p>
-                    職人一人ひとりが素材と向き合い、その個性を活かしながら丁寧に仕上げています。工場での大量生産では得られない温もりと存在感が、MAISONの家具には宿っています。
-                </p>
-                <p>
-                    オーク、ウォールナット、チェリー——それぞれの木が持つ表情をそのままに、永く使い続けられる家具を作り続けています。
-                </p>
-
+                <h2>About <span>Us</span></h2>
+                <p>職人一人ひとりが素材と向き合い、その個性を活かしながら丁寧に仕上げています。工場での大量生産では得られない温もりと存在感が、MAISONの家具には宿っています。</p>
+                <p>オーク、ウォールナット、チェリー——それぞれの木が持つ表情をそのままに、永く使い続けられる家具を作り続けています。</p>
                 <a href="#" class="text-link">私たちについて →</a>
             </div>
         </div>
@@ -62,8 +73,6 @@
         <div class="feature-band-overlay"></div>
     </div>
 
-
-
     <!-- ── PRODUCTS ── -->
     <section class="products-section" id="collection">
         <div class="products-inner">
@@ -73,68 +82,47 @@
                 </div>
                 <a href="#" class="see-all">すべての製品を見る →</a>
             </div>
-
             <div class="products-grid reveal d1">
-                <!-- Card 1 (wide) -->
                 <div class="p-card">
-                    <div class="p-img" style="
-                background-image: url(&quot;https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1000&q=80&fit=crop&quot;);
-              "></div>
+                    <div class="p-img" style="background-image:url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1000&q=80&fit=crop')"></div>
                     <div class="p-overlay"></div>
                     <div class="p-info">
                         <p class="p-name">Linen Sofa</p>
                         <p class="p-cat">Living Room</p>
                     </div>
                 </div>
-
-                <!-- Card 2 -->
                 <div class="p-card">
-                    <div class="p-img" style="
-                background-image: url(&quot;https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80&fit=crop&quot;);
-              "></div>
+                    <div class="p-img" style="background-image:url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80&fit=crop')"></div>
                     <div class="p-overlay"></div>
                     <div class="p-info">
                         <p class="p-name">Oak Armchair</p>
                         <p class="p-cat">Seating</p>
                     </div>
                 </div>
-
-                <!-- Card 3 -->
                 <div class="p-card">
-                    <div class="p-img" style="
-                background-image: url(&quot;https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=800&q=80&fit=crop&quot;);
-              "></div>
+                    <div class="p-img" style="background-image:url('https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=800&q=80&fit=crop')"></div>
                     <div class="p-overlay"></div>
                     <div class="p-info">
                         <p class="p-name">Walnut Dining Table</p>
                         <p class="p-cat">Dining Room</p>
                     </div>
                 </div>
-
-                <!-- Card 4 (wide) -->
                 <div class="p-card">
-                    <div class="p-img" style="
-                background-image: url(&quot;https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1000&q=80&fit=crop&quot;);
-              "></div>
+                    <div class="p-img" style="background-image:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1000&q=80&fit=crop')"></div>
                     <div class="p-overlay"></div>
                     <div class="p-info">
                         <p class="p-name">Nordic Bed Frame</p>
                         <p class="p-cat">Bedroom</p>
                     </div>
                 </div>
-
-                <!-- Card 5 -->
                 <div class="p-card">
-                    <div class="p-img" style="
-                background-image: url(&quot;https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=600&q=80&fit=crop&quot;);
-              "></div>
+                    <div class="p-img" style="background-image:url('https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=600&q=80&fit=crop')"></div>
                     <div class="p-overlay"></div>
                     <div class="p-info">
                         <p class="p-name">Wall Shelving</p>
                         <p class="p-cat">Storage</p>
                     </div>
                 </div>
-                <!-- Card 6 -->
                 <div class="p-card">
                     <div class="p-img" style="background-image:url('https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80&fit=crop')"></div>
                     <div class="p-overlay"></div>
@@ -143,7 +131,6 @@
                         <p class="p-cat">Lighting</p>
                     </div>
                 </div>
-                <!-- Card 7 -->
                 <div class="p-card">
                     <div class="p-img" style="background-image:url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200&q=80&fit=crop')"></div>
                     <div class="p-overlay"></div>
@@ -163,73 +150,47 @@
                 <div>
                     <h2>Column</h2>
                 </div>
-                <a href="#" class="see-all">すべての記事を見る →</a>
+                <a href="#" class="see-all see-all--light">すべての記事を見る →</a>
             </div>
-
             <div class="column-grid">
-
-                <!-- Article 1 (featured / wide) -->
                 <article class="col-card reveal">
                     <a href="#" class="col-card-link">
                         <div class="col-thumb" style="background-image:url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1200&q=80&fit=crop')"></div>
                         <div class="col-body">
-                            <div class="col-meta">
-                                <span class="col-tag">コラム</span>
-                                <span class="col-date">2025.06.10</span>
-                            </div>
+                            <div class="col-meta"><span class="col-tag">コラム</span><span class="col-date">2025.06.10</span></div>
                             <h3 class="col-title">自然素材が生み出す、くつろぎの空間づくり</h3>
-
-
                         </div>
                     </a>
                 </article>
-
-                <!-- Article 2 -->
                 <article class="col-card reveal d1">
                     <a href="#" class="col-card-link">
                         <div class="col-thumb" style="background-image:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80&fit=crop')"></div>
                         <div class="col-body">
-                            <div class="col-meta">
-                                <span class="col-tag">新着情報</span>
-                                <span class="col-date">2025.05.28</span>
-                            </div>
+                            <div class="col-meta"><span class="col-tag">新着情報</span><span class="col-date">2025.05.28</span></div>
                             <h3 class="col-title">2025年 秋冬コレクション 先行予約開始</h3>
-
-
                         </div>
                     </a>
                 </article>
-
-                <!-- Article 3 -->
                 <article class="col-card reveal d2">
                     <a href="#" class="col-card-link">
                         <div class="col-thumb" style="background-image:url('https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=800&q=80&fit=crop')"></div>
                         <div class="col-body">
-                            <div class="col-meta">
-                                <span class="col-tag">コラム</span>
-                                <span class="col-date">2025.05.14</span>
-                            </div>
+                            <div class="col-meta"><span class="col-tag">コラム</span><span class="col-date">2025.05.14</span></div>
                             <h3 class="col-title">木と向き合う30年 — 飛騨の家具職人、山田氏の仕事</h3>
-
-
                         </div>
                     </a>
                 </article>
-
             </div>
         </div>
     </section>
-    <!-- ── .showroom ── -->
-    <section class="showroom-section">
+
+    <!-- ── SHOWROOM ── -->
+    <section class="showroom-section" id="showroom">
         <div class="showroom-inner">
             <div class="showroom-text reveal">
-
-                <h2 class="reveal">Show <span>room</span>
-                </h2>
-                <p class="reveal d1">
-                    ショールームにてインテリアコンサルタントがご要望をお伺いします。<br>完全予約制で、丁寧にご対応いたします。
-                </p>
-                <a href="#contact" class="cta-btn reveal d2">ショールームを予約する</a>
+                <h2>Show <span>room</span></h2>
+                <p>ショールームにてインテリアコンサルタントがご要望をお伺いします。<br>完全予約制で、丁寧にご対応いたします。</p>
+                <a href="#contact" class="cta-btn">ショールームを予約する</a>
             </div>
             <div class="showroom-images reveal d1">
                 <div class="showroom-img-main"></div>
@@ -238,32 +199,31 @@
         </div>
     </section>
 
-
     <!-- ── FOOTER ── -->
     <footer id="contact">
-        <div class="footer-top">
+        <div class="footer-inner">
             <div class="footer-brand">
                 <span class="footer-logo">MAISON</span>
             </div>
-            <div class="footer-col">
-                <h4>Collection</h4>
-                <nav class="sub-nav">
-                    <a href="#">Living Room</a>
-                    <a href="#">Dining Room</a>
-                    <a href="#">Bedroom</a>
-                    <a href="#">Outdoor</a>
-                    </nav7>
-            </div>
-            <div class="footer-col">
-                <ul>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h4>Collection</h4>
+                    <nav class="sub-nav">
+                        <a href="#">Living Room</a>
+                        <a href="#">Dining Room</a>
+                        <a href="#">Bedroom</a>
+                        <a href="#">Outdoor</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <h4>Menu</h4>
                     <ul>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Column</a></li>
                         <li><a href="#">Showroom</a></li>
                         <li><a href="#">Contact</a></li>
-
                     </ul>
-                </ul>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
