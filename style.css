@@ -183,11 +183,6 @@ a {
     animation: fadeUp 1s .55s forwards;
 }
 
-.hero-title em {
-    font-style: italic;
-    color: var(--charcoal);
-}
-
 .hero-sub {
     margin-top: 26px;
     font-size: 11px;
@@ -352,11 +347,6 @@ a {
     margin-bottom: 26px;
 }
 
-.about-text h2 em {
-    font-style: italic;
-    color: var(--bark);
-}
-
 .about-text p {
     font-size: 14px;
     line-height: 1.9;
@@ -433,69 +423,6 @@ a {
 }
 
 
-/* ─── STORY ─── */
-
-.story-section {
-    padding: 116px 60px;
-    background: var(--cream);
-}
-
-.story-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: center;
-}
-
-.story-text h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(30px, 3vw, 48px);
-    font-weight: 400;
-    line-height: 1.15;
-    margin-bottom: 24px;
-}
-
-.story-text p {
-    font-size: 1.2rem;
-    line-height: 1.9;
-    color: var(--mid);
-    font-weight: 300;
-    margin-bottom: 14px;
-}
-
-.story-images {
-    position: relative;
-    height: 460px;
-}
-
-.story-img-main {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 78%;
-    height: 84%;
-    background-color: var(--sand);
-    background-image: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80&fit=crop');
-    background-size: cover;
-    background-position: center;
-}
-
-.story-img-sub {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 46%;
-    height: 50%;
-    background-color: var(--clay);
-    background-image: url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80&fit=crop');
-    background-size: cover;
-    background-position: center;
-    outline: 6px solid var(--cream);
-}
-
-
 /* ─── PRODUCTS ─── */
 
 .products-section {
@@ -522,9 +449,8 @@ a {
     line-height: 1.05;
 }
 
-.products-header h2 span {
+h2 span {
     display: block;
-    font-style: italic;
     color: var(--bark);
 }
 
@@ -647,12 +573,6 @@ a {
     font-weight: 400;
     color: var(--cream);
     line-height: 1.05;
-}
-
-.column-header h2 span {
-    display: block;
-    font-style: italic;
-    color: var(--bark);
 }
 
 
@@ -793,7 +713,7 @@ a {
 
 /* ─── CTA ─── */
 
-.cta-section {
+.showroom-section {
     padding: 134px 60px;
     text-align: center;
     background: var(--cream);
@@ -801,22 +721,7 @@ a {
     overflow: hidden;
 }
 
-.cta-section::before {
-    content: 'MAISON';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(100px, 18vw, 220px);
-    font-weight: 300;
-    color: rgba(196, 168, 130, .07);
-    letter-spacing: .2em;
-    pointer-events: none;
-    white-space: nowrap;
-}
-
-.cta-section h2 {
+.showroom-section h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(36px, 5vw, 66px);
     font-weight: 400;
@@ -826,17 +731,79 @@ a {
     position: relative;
 }
 
-.cta-section h2 em {
-    font-style: italic;
+.showroom-section h2 em {
     color: var(--bark);
 }
 
-.cta-section p {
+.showroom-section p {
     color: var(--mid);
     font-weight: 300;
     margin: 0 auto 46px;
     line-height: 1.8;
     position: relative;
+}
+
+
+/* ─── showroom- ─── */
+
+.showroom--section {
+    padding: 116px 60px;
+    background: var(--cream);
+}
+
+.showroom--inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.showroom--text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 3vw, 48px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.showroom--text p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--mid);
+    font-weight: 300;
+    margin-bottom: 14px;
+}
+
+.showroom--images {
+    position: relative;
+    height: 460px;
+}
+
+.showroom--img-main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 78%;
+    height: 84%;
+    background-color: var(--sand);
+    background-image: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.showroom--img-sub {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 46%;
+    height: 50%;
+    background-color: var(--clay);
+    background-image: url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80&fit=crop');
+    background-size: cover;
+    background-position: center;
+    outline: 6px solid var(--cream);
 }
 
 .cta-btn {
