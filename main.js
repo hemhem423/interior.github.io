@@ -12,18 +12,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ── Marquee build ──
-const words = [
-    'Handcrafted', '◆', 'Sustainable', '◆', 'Timeless Design', '◆',
-    '職人仕上げ', '◆', '上質素材', '◆', 'Made in Japan', '◆'
-];
-const inner = document.getElementById('marqueeInner');
-const all = [...words, ...words, ...words, ...words];
-inner.innerHTML = all.map(w =>
-    w === '◆' ?
-    `<span class="marquee-item marquee-dot">${w}</span>` :
-    `<span class="marquee-item">${w}</span>`
-).join('');
+
 
 // ── Hamburger menu ──
 const hamburger = document.getElementById('navHamburger');
@@ -44,7 +33,6 @@ function closeDrawer() {
     overlay.classList.remove('open');
     document.body.style.overflow = '';
 }
-
 hamburger.addEventListener('click', () => {
     drawer.classList.contains('open') ? closeDrawer() : openDrawer();
 });

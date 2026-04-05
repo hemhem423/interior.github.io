@@ -21,7 +21,6 @@ html {
     --charcoal: #2a2723;
     --mid: #6b6459;
     --accent: #b5825a;
-    --light-mid: #9e9488;
 }
 
 body {
@@ -113,7 +112,6 @@ a {
 }
 
 .nav-links a {
-    font-size: 12px;
     letter-spacing: .24em;
     text-transform: uppercase;
     font-weight: 500;
@@ -264,9 +262,20 @@ a {
     padding: 0 20px;
 }
 
+.hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: .42em;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgba(255, 255, 255, .68);
+    margin-bottom: 22px;
+    opacity: 0;
+    animation: fadeUp 1s .3s forwards;
+}
+
 .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(56px, 10vw, 128px);
+    font-size: clamp(64px, 10vw, 128px);
     font-weight: 300;
     line-height: .9;
     color: #fff;
@@ -275,7 +284,7 @@ a {
 }
 
 .hero-title span {
-    color: var(--clay);
+    color: var(--charcoal);
 }
 
 .hero-scroll {
@@ -288,7 +297,6 @@ a {
     align-items: center;
     gap: 8px;
     color: rgba(255, 255, 255, .45);
-    font-size: 9px;
     letter-spacing: .3em;
     text-transform: uppercase;
     opacity: 0;
@@ -373,17 +381,42 @@ a {
     overflow: hidden;
 }
 
+.about-badge {
+    position: absolute;
+    bottom: 26px;
+    right: -28px;
+    width: 100px;
+    height: 100px;
+    background: var(--charcoal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.about-badge .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    color: var(--clay);
+    line-height: 1;
+    font-weight: 300;
+}
+
+.about-badge .lbl {
+    font-size: 8px;
+    letter-spacing: .2em;
+    color: rgba(255, 255, 255, .45);
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
 .about-text h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(34px, 3.5vw, 52px);
     font-weight: 400;
     line-height: 1.1;
     margin-bottom: 26px;
-}
-
-.about-text h2 span {
-    color: var(--bark);
-    font-style: italic;
 }
 
 .about-text p {
@@ -399,7 +432,6 @@ a {
     align-items: center;
     gap: 10px;
     margin-top: 12px;
-    font-size: 11px;
     letter-spacing: .3em;
     text-transform: uppercase;
     font-weight: 500;
@@ -434,6 +466,34 @@ a {
     background: rgba(28, 24, 20, .56);
 }
 
+.feature-band-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.feature-band-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 6vw, 76px);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 18px;
+    letter-spacing: .04em;
+}
+
+.feature-band-text p {
+    font-size: 11px;
+    letter-spacing: .26em;
+    color: rgba(255, 255, 255, .58);
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
 
 /* ─── PRODUCTS ─── */
 
@@ -466,7 +526,6 @@ h2 span {
 }
 
 .see-all {
-    font-size: 11px;
     letter-spacing: .3em;
     text-transform: uppercase;
     font-weight: 400;
@@ -485,16 +544,6 @@ h2 span {
 .see-all:hover {
     color: var(--accent);
     border-color: var(--accent);
-}
-
-.see-all--light {
-    color: rgba(245, 240, 232, .5);
-    border-color: rgba(245, 240, 232, .2);
-}
-
-.see-all--light:hover {
-    color: var(--clay);
-    border-color: var(--clay);
 }
 
 .products-grid {
@@ -601,11 +650,22 @@ h2 span {
     line-height: 1.05;
 }
 
+
+/* Grid: featured card takes left 2/3, two cards stack on right */
+
 .column-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
     gap: 4px;
 }
+
+.col-card--featured {
+    grid-row: span 2;
+}
+
+
+/* Card base */
 
 .col-card {
     background: var(--warm-white);
@@ -624,24 +684,41 @@ h2 span {
     opacity: .88;
 }
 
+.col-card-link:hover .col-more {
+    color: var(--accent);
+}
+
+
+/* Thumbnail */
+
 .col-thumb {
     width: 100%;
-    height: 220px;
     background-size: cover;
     background-position: center;
     transition: transform .7s cubic-bezier(.25, .46, .45, .94);
     flex-shrink: 0;
 }
 
+.col-card:not(.col-card--featured) .col-thumb {
+    height: 220px;
+}
+
 .col-card-link:hover .col-thumb {
     transform: scale(1.04);
 }
+
+
+/* Body */
 
 .col-body {
     padding: 28px 30px 32px;
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+.col-card--featured .col-body {
+    padding: 32px 36px 38px;
 }
 
 .col-meta {
@@ -670,15 +747,49 @@ h2 span {
 
 .col-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
     font-weight: 400;
     line-height: 1.3;
     color: var(--charcoal);
     margin-bottom: 12px;
 }
 
+.col-card--featured .col-title {
+    font-size: clamp(22px, 2.2vw, 30px);
+}
 
-/* ─── SHOWROOM ─── */
+.col-card:not(.col-card--featured) .col-title {
+    font-size: 18px;
+}
+
+.col-excerpt {
+    line-height: 1.85;
+    color: var(--mid);
+    font-weight: 300;
+    flex: 1;
+}
+
+.col-card:not(.col-card--featured) .col-excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.col-more {
+    font-size: 10px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--charcoal);
+    transition: color .3s;
+    margin-top: auto;
+}
+
+
+/* ─── CTA ─── */
+
+
+/* ─── showroom- ─── */
 
 .showroom-section {
     padding: 116px 60px;
@@ -702,17 +813,20 @@ h2 span {
     margin-bottom: 24px;
 }
 
-.showroom-text h2 span {
-    color: var(--bark);
-    font-style: italic;
-}
-
 .showroom-section p {
-    font-size: 14px;
     color: var(--mid);
     font-weight: 300;
-    margin-bottom: 40px;
+    margin: 0 auto 46px;
     line-height: 1.8;
+    position: relative;
+}
+
+.showroom--text p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--mid);
+    font-weight: 300;
+    margin-bottom: 14px;
 }
 
 .showroom-images {
@@ -746,11 +860,11 @@ h2 span {
 }
 
 .cta-btn {
+    position: relative;
     display: inline-block;
     padding: 15px 54px;
     background: var(--charcoal);
     color: var(--cream);
-    font-size: 11px;
     letter-spacing: .3em;
     text-transform: uppercase;
     font-weight: 400;
@@ -789,6 +903,14 @@ footer {
     display: block;
 }
 
+.footer-brand p {
+    font-size: 12px;
+    color: rgba(245, 240, 232, .32);
+    line-height: 1.8;
+    font-weight: 200;
+    max-width: 220px;
+}
+
 .footer-nav {
     display: grid;
     gap: 3rem;
@@ -798,22 +920,20 @@ footer {
 .footer-col h4 {
     font-weight: 400;
     color: var(--cream);
-    font-size: 11px;
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: .36em;
-    margin-bottom: 16px;
 }
 
 .footer-col .sub-nav a {
-    display: block;
-    color: rgba(245, 240, 232, .45);
-    font-size: 12px;
-    font-weight: 200;
-    margin-bottom: 9px;
     transition: color .3s;
+    display: block;
+    color: var(--cream);
+    margin: 10px;
 }
 
 .footer-col ul {
+    color: var(--cream);
     list-style: none;
 }
 
@@ -822,11 +942,10 @@ footer {
 }
 
 .footer-col li a {
-    color: rgba(245, 240, 232, .45);
-    font-size: 12px;
-    font-weight: 200;
+    color: var(--cream);
+    font-size: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: .2em;
+    letter-spacing: .36em;
     transition: color .3s;
 }
 
@@ -842,8 +961,7 @@ footer {
 }
 
 .footer-bottom p {
-    color: rgba(245, 240, 232, .3);
-    font-size: 11px;
+    color: var(--cream);
     font-weight: 200;
     letter-spacing: .1em;
 }
@@ -884,9 +1002,9 @@ footer {
 
 /* ═══════════════════════════════════════
    RESPONSIVE
-   ─ tablet : 1024px以下
-   ─ mobile : 768px以下
-   ─ small  : 480px以下
+   ─ tablet : 〜1024px
+   ─ mobile : 〜768px
+   ─ small  : 〜480px
 ═══════════════════════════════════════ */
 
 
@@ -905,33 +1023,8 @@ footer {
     .showroom-section {
         padding: 80px 40px;
     }
-    .about-inner {
-        gap: 50px;
-    }
-    .about-img-wrap .img-box {
-        height: 420px;
-    }
     .feature-band {
-        height: 380px;
         background-attachment: scroll;
-    }
-    .products-grid {
-        gap: 3px;
-    }
-    .p-card .p-img {
-        height: 300px;
-    }
-    .column-grid {
-        gap: 3px;
-    }
-    .col-thumb {
-        height: 180px;
-    }
-    .showroom-inner {
-        gap: 60px;
-    }
-    .showroom-images {
-        height: 380px;
     }
     footer {
         padding: 56px 40px 28px;
@@ -955,17 +1048,13 @@ footer {
     .nav-hamburger {
         display: flex;
     }
-    /* HERO */
-    .hero-title {
-        font-size: clamp(48px, 14vw, 80px);
-    }
     /* ABOUT */
     .about-section {
         padding: 72px 24px;
     }
     .about-inner {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 40px;
     }
     .about-img-wrap .corner-accent {
         display: none;
@@ -985,22 +1074,19 @@ footer {
     .products-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
-        margin-bottom: 32px;
+        gap: 12px;
     }
-    /*  2カラムに変更、ワイドカード解除 */
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 3px;
     }
     .p-card:nth-child(1),
     .p-card:nth-child(4) {
         grid-column: span 1;
     }
     .p-card .p-img {
-        height: 220px;
+        height: 240px;
     }
-    /* ホバーが使えないので常にinfoを表示 */
+    /* タッチ端末でも情報を常時表示 */
     .p-card .p-overlay {
         opacity: 1;
     }
@@ -1015,15 +1101,13 @@ footer {
     .column-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
-        margin-bottom: 32px;
+        gap: 12px;
     }
     .column-grid {
         grid-template-columns: 1fr;
-        gap: 3px;
     }
-    .col-thumb {
-        height: 220px;
+    .col-card:not(.col-card--featured) .col-thumb {
+        height: 200px;
     }
     /* SHOWROOM */
     .showroom-section {
@@ -1033,18 +1117,15 @@ footer {
         grid-template-columns: 1fr;
         gap: 48px;
     }
-    .showroom-images {
-        height: 320px;
-    }
     .showroom-img-sub {
         display: none;
+    }
+    .showroom-images {
+        height: 280px;
     }
     .showroom-img-main {
         width: 100%;
         height: 100%;
-        right: auto;
-        top: auto;
-        position: relative;
     }
     /* FOOTER */
     footer {
@@ -1053,11 +1134,6 @@ footer {
     .footer-inner {
         flex-direction: column;
         gap: 40px;
-        padding-bottom: 40px;
-    }
-    .footer-nav {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
     }
     .footer-bottom {
         flex-direction: column;
@@ -1069,27 +1145,13 @@ footer {
 /* ── Small (〜480px) ── */
 
 @media (max-width: 480px) {
-    /* HERO */
-    .hero-scroll {
-        display: none;
-    }
-    /* PRODUCTS: 1カラム */
     .products-grid {
         grid-template-columns: 1fr;
     }
     .p-card .p-img {
         height: 260px;
     }
-    /* COLUMN: 1カラム（すでに1fr） */
-    .col-thumb {
-        height: 200px;
-    }
-    /* FOOTER */
     .footer-nav {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .footer-bottom {
-        align-items: flex-start;
     }
 }
