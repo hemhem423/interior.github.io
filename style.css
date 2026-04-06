@@ -871,7 +871,12 @@ h2 span {
     font-weight: 400;
     transition: background .3s;
 }
-
+@media screen (max-width:768px) {
+    .cta-btn a {
+        display: flex;
+        justify-content: center;
+}
+}
 .cta-btn:hover {
     background: var(--accent);
 }
